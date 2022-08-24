@@ -34,5 +34,12 @@ class App extends Component {
    },1000)
   }
  
+  array = length => Array.from({length}).map((v, k) => k).map(x => x + 1);
+  addPreZero = num => {
+    if(num >= 10 ) return num;
+      return '0' + num;  
+  }
+
+  
 
 export default App;
