@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   constructor(){
     super()
-    this.state=({
+    this.state = ({
       year: 2022,
       M_month: 'Aug',
       month: 8,
@@ -17,10 +17,10 @@ class App extends Component {
     })
   }
 
- componentWillMount(){
-   setInterval(()=>{
-     let time= new Date()
-     this.setState({
+ componentWillMount() {
+   setInterval(() => {
+     let time = new Date()
+     this.setState ({
       M_month:this.state.M_months[time.getUTCMonth()],
       month:time.getMonth() + 1,
       day:time.getDate(),
@@ -55,25 +55,25 @@ class App extends Component {
 
            
 
-            {this.array(12).map((x,index)=>{
+            {this.array(12).map((x, index) => {
               return (
-                <div key={index} className={`month item ${index===(this.state.month-1)?"active":""}`} style={{transform: `rotate(${index*30-30*(this.state.month-1)}deg)`}}>
-                  {`${x} month`}
+                <div key={ index } className={`month item ${index===(this.state.month-1)?"active":""}`} style={{transform: `rotate(${index*30-30*(this.state.month-1)}deg)`}}>
+                  {`${ x } month`}
                 </div>
               )
             })}
 
-            {this.array(30).map((x,index)=>{
+            {this.array(30).map((x, index) => {
               return (
-                <div key={index} className={`day item ${index===(this.state.day-1)?"active":""}`} style={{transform: `rotate(${index*12-12*(this.state.day-1)}deg)`}}>
-                  {`${x} day`}
+                <div key={ index } className={`day item ${index===(this.state.day-1)?"active":""}`} style={{transform: `rotate(${index*12-12*(this.state.day-1)}deg)`}}>
+                  {`${ x } day`}
                 </div>
               )
             })}
 
-            {this.array(5).map((x,index)=>{
+            {this.array(5).map((x, index) => {
               return (
-                <div key={index} 
+                <div key={ index } 
                 className={`week item ${index===(this.state.week-1)?"active":""}`} 
                 style={{transform: `rotate(${index*(360 / 21)-( 360 / 21)*(this.state.week-1)}deg)`}}>
                   {`week ${x}`}
@@ -81,32 +81,32 @@ class App extends Component {
               )
             })}
 
-            {this.array(24).map((x,index)=>{
+            {this.array(24).map((x, index) => {
               return (
-                <div key={index} 
+                <div key={ index } 
                 className={`hour item ${index===(this.state.hour-1)?"active":""}`} 
                 style={{transform: `rotate(${index*(360/24)-(360/24)*(this.state.hour-1)}deg)`}}>
-                  {`${x} hr`}
+                  {`${ x } hr`}
                 </div>
               )
             })}
 
-            {this.array(60).map((x,index)=>{
+            {this.array(60).map((x, index) => {
               return (
-                <div key={index} 
+                <div key={ index } 
                 className={`Minute item ${index===(this.state.Minute-1)?"active":""}`} 
                 style={{transform: `rotate(${index*(360/60)-(360/60)*(this.state.Minute-1)}deg)`}}>
-                  {`${x} min`}
+                  {`${ x } min`}
                 </div>
               )
             })}
 
-            {this.array(60).map((x,index)=>{
+            {this.array(60).map((x, index) => {
               return (
-                <div key={index} 
+                <div key={ index } 
                 className={`second item ${index===(this.state.second-1)?"active":""}`} 
                 style={{transform: `rotate(${index*(360/60)-(360/60)*(this.state.second-1)}deg)`}}>
-                  {`${x} sec`}
+                  {`${ x } sec`}
                 </div>
               )
             })}
