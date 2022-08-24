@@ -5,16 +5,15 @@ class App extends Component {
   constructor(){
     super()
     this.state=({
-      year:2019,
-      M_month:'Mar',
-      month:1,
-      day:1,
-      week:1,
-      hour:12,
-      Minute:1,
-      second:1,
-      Zodiac:'Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces'.split(','),
-      M_months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"],
+      year: 2022,
+      M_month: 'Aug',
+      month: 8,
+      day: 24,
+      week: 3,
+      hour: 12,
+      Minute: 1,
+      second: 1,
+      M_months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"],
     })
   }
 
@@ -22,9 +21,8 @@ class App extends Component {
    setInterval(()=>{
      let time= new Date()
      this.setState({
-      year:this.state.Zodiac[time.getUTCFullYear()%12],
       M_month:this.state.M_months[time.getUTCMonth()],
-      month:time.getMonth()+1,
+      month:time.getMonth() + 1,
       day:time.getDate(),
       week:time.getDay(),
       hour:time.getHours(),
@@ -47,7 +45,7 @@ class App extends Component {
           <div className='msg'>
             <div  className='year'>
             <span>
-            {this.state.year}</span> / Year
+            {new Date().getFullYear()}</span> 
             </div>
           </div>
           <div className='M_month'>
@@ -73,11 +71,11 @@ class App extends Component {
               )
             })}
 
-            {this.array(7).map((x,index)=>{
+            {this.array(5).map((x,index)=>{
               return (
                 <div key={index} 
                 className={`week item ${index===(this.state.week-1)?"active":""}`} 
-                style={{transform: `rotate(${index*(360/21)-(360/21)*(this.state.week-1)}deg)`}}>
+                style={{transform: `rotate(${index*(360 / 21)-( 360 / 21)*(this.state.week-1)}deg)`}}>
                   {`week ${x}`}
                 </div>
               )

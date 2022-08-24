@@ -10,14 +10,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #002347;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 1vmin);
-  color: white;
+  color: #FF8E00;
 }
 
 .App-link {
@@ -73,16 +73,16 @@
 
 .week{
   width: 360px;
-  right: -180px;
+  right: -165px;
 }
 
 .hour{
   width: 600px;
-  right: -300px;
+  right: -315px;
 }
 .Minute{
   width: 800px;
-  right: -400px;
+  right: -390px;
 }
 .second{
   width: 960px;
